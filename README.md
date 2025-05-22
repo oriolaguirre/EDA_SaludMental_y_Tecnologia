@@ -28,9 +28,4 @@ El dataset utilizado se encuentra en `../Datasets/data.csv`, donde se analizará
 - Pandas, NumPy, Matplotlib
 - Jupyter Notebook (opcional)
 
-## 🏆 Contribuciones
-Si deseas aportar mejoras o nuevas perspectivas al proyecto, ¡las contribuciones son bienvenidas!
 
----
-
-Este diseño presenta el README con claridad y estructura. ¿Quieres modificar algún apartado o añadir detalles extra? 🚀
