@@ -10,7 +10,7 @@ Este proyecto explora la relación entre el consumo de pantallas y la salud ment
 - Comparar el impacto de las redes sociales en adolescentes frente a otros grupos de edad.
 
 ## 🏗️ Metodología
-1. **Recopilación de datos:** Se utilizarán fuentes de estudios previos y encuestas propias.
+1. **Recopilación de datos:** Se utilizarán fuentes de estudios previos, información volcada en datasets.
 2. **Procesamiento y limpieza:** Se aplicarán técnicas de análisis exploratorio de datos (EDA) con Pandas y Matplotlib.
 3. **Modelado y evaluación:** Se probarán modelos estadísticos para validar las hipótesis propuestas.
 
