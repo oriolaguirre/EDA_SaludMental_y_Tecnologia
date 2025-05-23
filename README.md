@@ -5,7 +5,7 @@ Este proyecto explora la relación entre el consumo de pantallas y la salud ment
 
 ## 🎯 Objetivos
 - Evaluar la influencia del tiempo frente a pantallas en el bienestar psicológico.
-- Determinar si los problemas de salud mental tienen mayormente un origen genético.
+- Determinar si los problemas de salud mental tienen mayormente un origen genético u otros factores.
 - Analizar si otros hábitos afectan la salud mental más que el consumo de pantallas.
 - Comparar el impacto de las redes sociales en adolescentes frente a otros grupos de edad.
 
