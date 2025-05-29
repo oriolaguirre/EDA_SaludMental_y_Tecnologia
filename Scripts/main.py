@@ -182,28 +182,29 @@ total = mental_health_count3 + mental_health_count2 + mental_health_count
 total2 = mental_health_count1 + mental_health_count21 + mental_health_count31
 # Mostrar resultados
 
-df_grouped = df2_1.groupby(["family_history", "mental_health_consequence"]).size().reset_index(name="count")
-df_grouped["family_history"] = df_grouped["family_history"].map({0: "No", 1: "Sí"})
-# Crear el gráfico de barras agrupadas
-df_grouped2.loc[:, "mental_health_consequence"] = df_grouped2["mental_health_consequence"].map({0: "No", 1: "Sí", 0.5: "Quizás"})
 
 
 df_grouped = df2_1.groupby(["family_history", "mental_health_consequence"]).size().reset_index(name="count")
+# Mapear los valores numéricos a etiquetas descriptivas
 df_grouped["family_history"] = df_grouped["family_history"].map({0: "No", 1: "Sí"})
+df_grouped["mental_health_consequence"] = df_grouped["mental_health_consequence"].map({0.0: "No", 0.5: "Quizás", 1.0: "Sí"})
 # Crear el gráfico de barras agrupadas
-df_grouped2.loc[:, "mental_health_consequence"] = df_grouped2["mental_health_consequence"].map({0: "No", 1: "Sí", 0.5: "Quizás"})
+plt.figure(figsize=(8, 6))  # Ajustar tamaño si es necesario
+sns.barplot(
+    x="mental_health_consequence",
+    y="count",
+    hue="family_history",
+    data=df_grouped,
+    palette="Blues_d",
+    order=["No", "Quizás", "Sí"]  # el orden de las categorías
+)
+# Configurar etiquetas y título
+plt.xlabel("Respuestas", fontsize=12)
+plt.ylabel("Cantidad", fontsize=12)
+plt.title("Comparación de consecuencias negativas en salud mental", fontsize=14, pad=20)
+# Personalizar leyenda
+plt.legend(title="Historial Familiar", title_fontsize=12, fontsize=11)
+# Ajustar diseño y mostrar gráfico
+plt.tight_layout()
 
-
-plt.figure()
-sns.barplot(x="mental_health_consequence", y="count", hue="family_history", data=df_grouped, palette="Blues_d")
-
-# Cambiar etiquetas del eje X
-#plt.xticks(rotation=45, fontsize=12, ha='center')
-
-# Configurar etiquetas
-plt.xlabel("Respuestas")
-plt.ylabel("Cantidad")
-plt.title("Comparación de consecuencias negativas en salud mental")
-plt.legend(title="Historial Familiar") 
-#plt.tight_layout()
 plt.savefig("../Imagenes/Mental_health_score_genetics.jpg")
